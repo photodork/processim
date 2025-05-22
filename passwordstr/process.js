@@ -130,3 +130,22 @@ function runSJF(){
   document.querySelector(`#resultTable2`).innerHTML = resultHTML
   document.querySelector(`#ganttChart2`).innerHTML = `<h4>Gantt Chart:</h4>${ganttHTML}<br>${timeLine}${current_time}`
 }
+
+//priority scheduling(non-preemptive)
+function createInputs3(){
+  const n = parseInt(document.querySelector(`#numProcesses3`).value)
+  let container = document.querySelector(`#inputFields3`) 
+  container.innerHTML = ""
+  for(let i = 0; i<n; i++){
+    container.innerHTML += `
+      <h4>Process ${i+1}</h4>
+      Arrival Time: <input type="number" id="at3${i}" required>
+      Burst Time: <input type="number" id="bt3${i}" required>
+      Priority: <input type="number id="p${i}" required>
+      <br><br>`
+  }
+}
+
+function runPS(){
+  
+}
