@@ -1,79 +1,221 @@
-table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-      padding: 5px;
-      text-align: center;
-    }
-    .gantt-bar {
-      display: inline-block;
-      margin-right: 2px;
-      padding: 10px;
-      background-color: #90ee90;
-      border: 1px solid #000;
-    }
-    button:hover{
-      cursor: pointer;
-    }
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f9faff;
+  color: #333;
+  padding: 20px 10px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
 h1 {
   text-align: center;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #1a237e;
+  letter-spacing: 1px;
 }
-.runbtn{
-    margin-top: 7px;
-    margin-bottom: 7px;
+
+hr {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin: 25px 0;
 }
 
-@media screen and (max-width: 455px) {
-  body {
-    padding: 10px;
+.scheduler-section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-weight: 600;
+  color: #3949ab;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #555;
+  margin: 20px 0 10px;
+  font-weight: 600;
+}
+
+.input-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 15px;
+  margin-bottom: 15px;
+}
+
+.input-form label {
+  flex: 1 0 140px;
+  font-weight: 600;
+  color: #555;
+}
+
+.input-form input[type="number"] {
+  flex: 1 0 100px;
+  padding: 7px 10px;
+  border: 1.8px solid #bbb;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.input-form input[type="number"]:focus {
+  border-color: #3949ab;
+  outline: none;
+  box-shadow: 0 0 6px #c5cae9;
+}
+
+.btn {
+  background-color: #3949ab;
+  color: white;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgb(57 73 171 / 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #283593;
+  box-shadow: 0 8px 16px rgb(40 53 147 / 0.5);
+  transform: translateY(-3px);
+}
+.btn:active {
+  background-color: #1a237e;
+  box-shadow: 0 4px 8px rgb(26 35 126 / 0.3);
+  transform: translateY(0); 
+}
+
+.runbtn {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 160px;
+  display: block;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 5px;
+  color: #3949ab;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #1a237e;
+  text-decoration: underline;
+}
+
+.input-fields {
+  margin-bottom: 10px;
+}
+
+.result-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  box-shadow: 0 3px 8px rgb(0 0 0 / 0.07);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.result-table th,
+.result-table td {
+  border: 1px solid #ddd;
+  padding: 12px 10px;
+  text-align: center;
+  font-size: 15px;
+  background: white;
+}
+
+.result-table th {
+  background-color: #3949ab;
+  color: white;
+  font-weight: 700;
+}
+
+.gantt-chart {
+  margin-top: 20px;
+  min-height: 50px;
+}
+
+.gantt-bar {
+  display: inline-block;
+  margin-right: 4px;
+  padding: 10px 15px;
+  background-color: #64b5f6;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.2);
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.gantt-bar:hover {
+  background-color: #1976d2;
+}
+
+.time-quantum-label {
+  font-weight: 600;
+  color: #555;
+  margin-top: 15px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.time-quantum-input {
+  width: 120px;
+  padding: 7px 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1.8px solid #bbb;
+  transition: border-color 0.3s ease;
+}
+
+.time-quantum-input:focus {
+  border-color: #3949ab;
+  outline: none;
+  box-shadow: 0 0 6px #c5cae9;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px 20px;
   }
 
-  table, th, td {
-    font-size: 12px;
-    padding: 4px;
+  .input-form {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .gantt-bar {
-    padding: 6px;
-    font-size: 12px;
-  }
-
-  form, .runbtn, input, label, h2, h3, h4 {
+  .input-form label,
+  .input-form input[type="number"],
+  .btn {
+    flex: 1 0 auto;
     width: 100%;
-    display: block;
-    font-size: 14px;
-  }
-
-  input[type="number"] {
-    width: 100%;
-    box-sizing: border-box;
-    margin-top: 5px;
-    margin-bottom: 10px;
   }
 
   .runbtn {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  a {
-    word-wrap: break-word;
-    font-size: 13px;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  h3 {
-    font-size: 16px;
-  }
-
-  h4 {
-    font-size: 15px;
+    max-width: 100%;
   }
 }

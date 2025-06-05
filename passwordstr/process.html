@@ -1,83 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SchedulingSim</title>
-  <link rel="stylesheet" href="process.css">
-  <link rel="shortcut icon" href="visual.ico" type="image/x-icon">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="visual.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="process.css" />
 </head>
 <body>
-<h1>Process Scheduler Simulator</h1> <hr> <hr>
-<h2><i>FCFS (First Come First Serve)</i></h2>
-<form id="processForm">
-  <label>Number of Processes:</label>
-  <input type="number" id="numProcesses" autofocus required>
-  <button type="button" onclick="createInputs()">Create Inputs</button>
-</form>
+  <div class="container">
+    <h1>CPU Scheduling Simulator</h1>
+    <hr />
 
-<div id="inputFields"></div>
+    <section class="scheduler-section">
+      <h2><i>FCFS (First Come First Serve)</i></h2>
+      <form id="processForm" class="input-form">
+        <label for="numProcesses">Number of Processes:</label>
+        <input type="number" id="numProcesses" autofocus required min="1" />
+        <button type="button" class="btn" onclick="createInputs()">Create Inputs</button>
+      </form>
 
-<button class="runbtn" onclick="runFCFS()">Run FCFS</button> <br>
-<a href="https://www.geeksforgeeks.org/first-come-first-serve-cpu-scheduling-non-preemptive/" target="_blank">about FCFS</a>
-<h3>Results:</h3>
-<div id="resultTable"></div>
-<div id="ganttChart"></div>
+      <div id="inputFields" class="input-fields"></div>
+      <button class="btn runbtn" onclick="runFCFS()">Run FCFS</button>
+      <a href="https://www.geeksforgeeks.org/first-come-first-serve-cpu-scheduling-non-preemptive/" target="_blank" class="link">About FCFS</a>
 
-<hr>
+      <h3>Results:</h3>
+      <div id="resultTable" class="result-table"></div>
+      <div id="ganttChart" class="gantt-chart"></div>
+    </section>
 
-<h2><i>SJF (Shortest Job First)</i></h2>
-<form>
-  <label>Number of Processes:</label>
-  <input type="number" id="numProcesses2" required>
-  <button type="button" onclick="createInputs2()">Create Inputs</button>
-</form>
+    <hr />
 
-<div id="inputFields2"></div>
+    <section class="scheduler-section">
+      <h2><i>SJF (Shortest Job First)</i></h2>
+      <form class="input-form">
+        <label for="numProcesses2">Number of Processes:</label>
+        <input type="number" id="numProcesses2" required min="1" />
+        <button type="button" class="btn" onclick="createInputs2()">Create Inputs</button>
+      </form>
 
-<button class="runbtn" onclick="runSJF()">Run SJF</button> <br>
-<a href="https://www.geeksforgeeks.org/shortest-job-first-or-sjf-cpu-scheduling/" target="_blank">about SJF</a>
-<h3>Results:</h3>
-<div id="resultTable2"></div>
-<div id="ganttChart2"></div>
+      <div id="inputFields2" class="input-fields"></div>
+      <button class="btn runbtn" onclick="runSJF()">Run SJF</button>
+      <a href="https://www.geeksforgeeks.org/shortest-job-first-or-sjf-cpu-scheduling/" target="_blank" class="link">About SJF</a>
 
-<hr>
+      <h3>Results:</h3>
+      <div id="resultTable2" class="result-table"></div>
+      <div id="ganttChart2" class="gantt-chart"></div>
+    </section>
 
-<h2><i>Priority Scheduling (non-preemptive)</i></h2>
-<form>
-  <label>Number of Processes:</label>
-  <input type="number" id="numProcesses3" required>
-  <button type="button" onclick="createInputs3()">Create Inputs</button>
-</form>
+    <hr />
 
-<div id="inputFields3"></div>
+    <section class="scheduler-section">
+      <h2><i>Priority Scheduling (Non-preemptive)</i></h2>
+      <form class="input-form">
+        <label for="numProcesses3">Number of Processes:</label>
+        <input type="number" id="numProcesses3" required min="1" />
+        <button type="button" class="btn" onclick="createInputs3()">Create Inputs</button>
+      </form>
 
-<button class="runbtn" onclick="runPS()">Run Priority Scheduling</button> <br>
-<a href="https://www.geeksforgeeks.org/priority-scheduling-in-operating-system/" target="_blank">about Priority Scheduling</a>
-<h3>Results:</h3>
-<div id="resultTable3"></div>
-<div id="ganttChart3"></div>
+      <div id="inputFields3" class="input-fields"></div>
+      <button class="btn runbtn" onclick="runPS()">Run Priority Scheduling</button>
+      <a href="https://www.geeksforgeeks.org/priority-scheduling-in-operating-system/" target="_blank" class="link">About Priority Scheduling</a>
 
-<hr>
+      <h3>Results:</h3>
+      <div id="resultTable3" class="result-table"></div>
+      <div id="ganttChart3" class="gantt-chart"></div>
+    </section>
 
-<h2><i>Round Robin (RR)</i></h2>
-<form>
-  <label>Number of Processes:</label>
-  <input type="number" id="numProcesses4" required>
-  <button type="button" onclick="createInputs4()">Create Inputs</button>
-</form>
+    <hr />
 
-<div id="inputFieldsRR"></div>
+    <section class="scheduler-section">
+      <h2><i>Round Robin (RR)</i></h2>
+      <form class="input-form">
+        <label for="numProcesses4">Number of Processes:</label>
+        <input type="number" id="numProcesses4" required min="1" />
+        <button type="button" class="btn" onclick="createInputs4()">Create Inputs</button>
+      </form>
 
-<label>Time Quantum:</label>
-<input type="number" id="timeQuantum" required> <br><br>
+      <div id="inputFieldsRR" class="input-fields"></div>
 
-<button class="runbtn" onclick="runRR()">Run Round Robin</button> <br>
-<a href="https://www.geeksforgeeks.org/round-robin-scheduling-in-operating-system/" target="_blank">about Round Robin</a>
+      <label for="timeQuantum" class="time-quantum-label">Time Quantum:</label>
+      <input type="number" id="timeQuantum" required min="1" class="time-quantum-input" />
 
-<h3>Results:</h3>
-<div id="resultTableRR"></div>
-<div id="ganttChartRR"></div>
+      <button class="btn runbtn" onclick="runRR()">Run Round Robin</button>
+      <a href="https://www.geeksforgeeks.org/round-robin-scheduling-in-operating-system/" target="_blank" class="link">About Round Robin</a>
 
-<script src="process.js"></script>
+      <h3>Results:</h3>
+      <div id="resultTableRR" class="result-table"></div>
+      <div id="ganttChartRR" class="gantt-chart"></div>
+    </section>
+  </div>
+
+  <script src="process.js"></script>
 </body>
 </html>
