@@ -22,34 +22,6 @@ h1 {
     margin-bottom: 7px;
 }
 
-@media screen and (max-width: 455px){
-  table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding: 5px;
-  text-align: center;
-  font-size: 14px;
-  word-wrap: break-word;
-}
-.gantt-bar {
-  display: inline-block;
-  margin-right: 2px;
-  padding: 10px;
-  background-color: #90ee90;
-  border: 1px solid #000;
-  font-size: 14px;
-}
-button:hover {
-  cursor: pointer;
-}
-h1 {
-  text-align: center;
-}
-.runbtn {
-  margin-top: 7px;
-  margin-bottom: 7px;
-}
-
 @media screen and (max-width: 455px) {
   body {
     padding: 10px;
@@ -104,6 +76,4 @@ h1 {
   h4 {
     font-size: 15px;
   }
-}
-
 }
