@@ -3,6 +3,8 @@
 <head>
   <title>SchedulingSim</title>
   <link rel="stylesheet" href="process.css">
+  <link rel="shortcut icon" href="visual.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <h1>Process Scheduler Simulator</h1> <hr> <hr>
@@ -26,7 +28,7 @@
 <h2><i>SJF (Shortest Job First)</i></h2>
 <form>
   <label>Number of Processes:</label>
-  <input type="number" id="numProcesses2" autofocus required>
+  <input type="number" id="numProcesses2" required>
   <button type="button" onclick="createInputs2()">Create Inputs</button>
 </form>
 
@@ -43,7 +45,7 @@
 <h2><i>Priority Scheduling (non-preemptive)</i></h2>
 <form>
   <label>Number of Processes:</label>
-  <input type="number" id="numProcesses3" autofocus required>
+  <input type="number" id="numProcesses3" required>
   <button type="button" onclick="createInputs3()">Create Inputs</button>
 </form>
 
@@ -52,8 +54,29 @@
 <button class="runbtn" onclick="runPS()">Run Priority Scheduling</button> <br>
 <a href="https://www.geeksforgeeks.org/priority-scheduling-in-operating-system/" target="_blank">about Priority Scheduling</a>
 <h3>Results:</h3>
-<div id="resultTable2"></div>
-<div id="ganttChart2"></div>
+<div id="resultTable3"></div>
+<div id="ganttChart3"></div>
+
+<hr>
+
+<h2><i>Round Robin (RR)</i></h2>
+<form>
+  <label>Number of Processes:</label>
+  <input type="number" id="numProcesses4" required>
+  <button type="button" onclick="createInputs4()">Create Inputs</button>
+</form>
+
+<div id="inputFieldsRR"></div>
+
+<label>Time Quantum:</label>
+<input type="number" id="timeQuantum" required> <br><br>
+
+<button class="runbtn" onclick="runRR()">Run Round Robin</button> <br>
+<a href="https://www.geeksforgeeks.org/round-robin-scheduling-in-operating-system/" target="_blank">about Round Robin</a>
+
+<h3>Results:</h3>
+<div id="resultTableRR"></div>
+<div id="ganttChartRR"></div>
 
 <script src="process.js"></script>
 </body>
